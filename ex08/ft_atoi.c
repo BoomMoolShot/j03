@@ -6,13 +6,13 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 23:59:21 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/08 01:33:15 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/08 14:41:39 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	skip_special_cases(char *str, int *i)
 {
-	while (str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n')
+	while (str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n' || str[*i] == '\13')
 	{
 		(*i)++;
 	}
@@ -22,8 +22,11 @@ void	signed_str(char *str, int *i, int *neg)
 {
 	if (str[*i] == '-' || str[*i] == '+')
 	{
+		if (str[*i] == '-')
+		{
+			*neg = -1;
+		}
 		(*i)++;
-		*neg = -1;
 	}
 }
 
