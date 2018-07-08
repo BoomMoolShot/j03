@@ -6,11 +6,9 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 20:49:59 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/06 10:00:55 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/08 14:24:28 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	putstr(char *str);
 
 char	*ft_strrev(char *str)
 {
@@ -33,6 +31,5 @@ char	*ft_strrev(char *str)
 		cnt++;
 		len--;
 	}
-	putstr(str);
 	return (str);
 }
