@@ -6,11 +6,11 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:46:43 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/09 22:17:12 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/09 19:41:37 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_prime(int nb)
+int		ft_is_prime(int nb)
 {
 	int		i;
 
