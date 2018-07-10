@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:46:43 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/10 12:09:27 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/10 12:16:17 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int		ft_find_next_prime(int nb)
 	int		res;
 
 	res = 1;
+	if (nb < 0)
+	{
+		return (2);
+	}
 	while (!ft_is_prime(nb))
 	{
 		nb += 1;
