@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 15:39:04 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/09 17:53:44 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/10 11:15:26 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_is_prime(int nb)
 		return (1);
 	if (nb % 2 == 0 || nb % 3 == 0)
 		return (0);
-	while (i * i <= nb)
+	while (i * 2 <= nb)
 	{
 		if (nb % i == 0)
 		{
@@ -29,5 +29,5 @@ int		ft_is_prime(int nb)
 		}
 		i += 2;
 	}
-	return (0);
+	return (1);
 }
