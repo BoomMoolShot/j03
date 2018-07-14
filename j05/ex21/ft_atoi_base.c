@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 21:40:10 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/12 22:24:31 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/14 10:59:38 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ int		is_in_base(char c, char *base)
 	while (base[i] != '\0')
 	{
 		if (base[i] == c)
-			return (1);
+			return (i);
+		i++;
 	}
-	return (0);
+	return (-1);
 }
 
 int ft_atoi_base(char *str, char *base)
@@ -83,19 +84,19 @@ int ft_atoi_base(char *str, char *base)
 	int     i;
 	int     nbr;
 	int     neg;
-	int		len_base;
-	int		len_str;
+	int		base_len;
+	int		str_len;
 
 	i = 0;
 	nbr = 0;
 	neg = 1;
-	len_base = string_len(base);
-	len_str = string_len(str);
+	base_len = string_len(base);
+	str_len = string_len(str);
 	signed_str(str, &i, &neg);
-	while (is_in_base(str[i], base)) 
+	while (is_in_base(str[i], base) != -1)
 	{
-		nbr *= 10;
-		nbr += ((int)str[i] - 48);
+		nbr *= base_len;
+		nbr += is_in_base(str[i], base);
 		i++;
 	}
 	nbr *= neg;
