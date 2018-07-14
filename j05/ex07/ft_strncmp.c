@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 09:29:04 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/11 10:52:22 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/14 10:20:43 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 		s2++;
 		n--;
 	}
-	return (0);
+	return (*s1 - *s2);
 }
