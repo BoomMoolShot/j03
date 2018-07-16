@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 22:52:54 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/14 11:09:35 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:00:59 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,25 @@ int		has_errors(char *base, int len)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int		i;
-	int		len;
-	int		res[32];
+	int			i;
+	int			len;
+	long int	nb;
+	int			res[32];
 
 	i = 0;
 	len =  string_len(base);
+	nb = nbr;
 	if (has_errors(base, len))
 		return;
-	if (nbr < 0)
+	if (nb < 0)
 	{
-		nbr *= -1;
+		nb *= -1;
 		ft_putchar('-');
 	}
-	while (nbr >= len)
+	while (nb >= len)
 	{
-		res[31 - i] = nbr % len;
-		nbr /= len;
+		res[31 - i] = nb % len;
+		nb /= len;
 		i++;
 	}
 	res[31 - i] = nbr;
