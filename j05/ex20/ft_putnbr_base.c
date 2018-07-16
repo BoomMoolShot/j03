@@ -6,11 +6,10 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 22:52:54 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/16 10:00:59 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:15:13 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	putnbrnl(int n);
 void	ft_putchar(char c);
 
 int		string_len(char *str)
@@ -37,9 +36,7 @@ int		wrong_chars_repeat(char *base, int len)
 		while (i < len)
 		{
 			if (base[c] == base[i] && c != i)
-			{
 				return (1);
-			}
 			i++;
 		}
 		i = 0;
@@ -56,8 +53,13 @@ int		wrong_chars_repeat(char *base, int len)
 	return (0);
 }
 
-int		has_errors(char *base, int len)
+int		has_errors(char *base, long int *nb, int len)
 {
+	if (*nb < 0)
+	{
+		*nb *= -1;
+		ft_putchar('-');
+	}
 	if (len < 2)
 		return (1);
 	if (wrong_chars_repeat(base, len))
@@ -73,15 +75,10 @@ void	ft_putnbr_base(int nbr, char *base)
 	int			res[32];
 
 	i = 0;
-	len =  string_len(base);
+	len = string_len(base);
 	nb = nbr;
 	if (has_errors(base, len))
-		return;
-	if (nb < 0)
-	{
-		nb *= -1;
-		ft_putchar('-');
-	}
+		return ;
 	while (nb >= len)
 	{
 		res[31 - i] = nb % len;

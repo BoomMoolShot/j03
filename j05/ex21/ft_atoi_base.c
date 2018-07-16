@@ -6,13 +6,13 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 21:40:10 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/14 10:59:38 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:14:00 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     string_len(char *str)
+int		string_len(char *str)
 {
-	int     i;
+	int		i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,7 +22,7 @@ int     string_len(char *str)
 	return (i);
 }
 
-void    signed_str(char *str, int *i, int *neg)
+void	signed_str(char *str, int *i, int *neg)
 {
 	if (str[*i] == '-' || str[*i] == '+')
 	{
@@ -34,10 +34,10 @@ void    signed_str(char *str, int *i, int *neg)
 	}
 }
 
-int     wrong_chars_repeat(char *base)
+int		wrong_chars_repeat(char *base)
 {
-	int     c;
-	int     i;
+	int		c;
+	int		i;
 
 	c = 0;
 	i = 0;
@@ -46,9 +46,7 @@ int     wrong_chars_repeat(char *base)
 		while (base[i] != '\0')
 		{
 			if (base[c] == base[i] && c != i)
-			{
 				return (1);
-			}
 			i++;
 		}
 		i = 0;
@@ -79,11 +77,11 @@ int		is_in_base(char c, char *base)
 	return (-1);
 }
 
-int ft_atoi_base(char *str, char *base)
+int		ft_atoi_base(char *str, char *base)
 {
-	int     i;
-	int     nbr;
-	int     neg;
+	int		i;
+	int		nbr;
+	int		neg;
 	int		base_len;
 	int		str_len;
 

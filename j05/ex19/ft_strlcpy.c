@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 20:25:17 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/11 22:28:24 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:04:22 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int				string_len(char *str)
 	return (i);
 }
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int		i;
 	unsigned int		src_len;
