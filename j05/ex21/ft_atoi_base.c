@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 21:40:10 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/16 10:14:00 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/16 11:47:31 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,17 @@ int		wrong_chars_repeat(char *base)
 	return (0);
 }
 
+int     has_errors(char *base, int base_len, int str_len)
+{
+	if (base_len < 2)
+		return (1);
+	if (str_len < 1)
+		return (1);
+	if (wrong_chars_repeat(base))
+		return (1);
+	return (0);
+}
+
 int		is_in_base(char c, char *base)
 {
 	int		i;
@@ -90,9 +101,13 @@ int		ft_atoi_base(char *str, char *base)
 	neg = 1;
 	base_len = string_len(base);
 	str_len = string_len(str);
+	if (has_errors(base, base_len, str_len))
+		   return (0);
 	signed_str(str, &i, &neg);
-	while (is_in_base(str[i], base) != -1)
+	while (i < str_len)
 	{
+		if (is_in_base(str[i], base) == -1)
+				return (0);
 		nbr *= base_len;
 		nbr += is_in_base(str[i], base);
 		i++;

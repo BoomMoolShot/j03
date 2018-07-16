@@ -6,7 +6,7 @@
 /*   By: abaisago <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 22:52:54 by abaisago          #+#    #+#             */
-/*   Updated: 2018/07/16 10:15:13 by abaisago         ###   ########.fr       */
+/*   Updated: 2018/07/16 10:30:30 by abaisago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		wrong_chars_repeat(char *base, int len)
 	return (0);
 }
 
-int		has_errors(char *base, long int *nb, int len)
+int		has_errors(char *base, long long int *nb, int len)
 {
 	if (*nb < 0)
 	{
@@ -69,15 +69,15 @@ int		has_errors(char *base, long int *nb, int len)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int			i;
-	int			len;
-	long int	nb;
-	int			res[32];
+	int				i;
+	int				len;
+	long long int	nb;
+	int				res[32];
 
 	i = 0;
 	len = string_len(base);
 	nb = nbr;
-	if (has_errors(base, len))
+	if (has_errors(base, &nb, len))
 		return ;
 	while (nb >= len)
 	{
@@ -85,7 +85,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		nb /= len;
 		i++;
 	}
-	res[31 - i] = nbr;
+	res[31 - i] = nb;
 	while (i >= 0)
 	{
 		ft_putchar(base[res[31 - i]]);
